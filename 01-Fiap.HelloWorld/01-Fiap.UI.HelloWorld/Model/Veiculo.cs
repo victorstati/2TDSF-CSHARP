@@ -4,11 +4,19 @@ using System.Text;
 
 namespace _01_Fiap.UI.HelloWorld.Model
 {
-    class Veiculo
+    abstract class Veiculo
     {
         //Atributos - Fields
         private int _codigo;
 
+        //Métodos
+        public abstract void Ligar();
+
+        //virtual permite a sobrescrita
+        public virtual void Andar()
+        {
+            Console.WriteLine("Veículo em movimento");
+        }
 
         //Métodos - Gets/Sets
         public string Cor { get; set; }
@@ -17,6 +25,17 @@ namespace _01_Fiap.UI.HelloWorld.Model
         {
             get { return _codigo; }
             set { _codigo = value; }
+        }
+
+        //Construtor - ctor tab tab
+        public Veiculo(string cor)
+        {
+            this.Cor = cor;
+        }
+
+        public Veiculo()
+        {
+
         }
         
     }

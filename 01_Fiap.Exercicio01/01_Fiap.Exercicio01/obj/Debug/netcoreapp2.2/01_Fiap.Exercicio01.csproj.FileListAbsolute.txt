@@ -1,0 +1,11 @@
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\bin\Debug\netcoreapp2.2\01_Fiap.Exercicio01.deps.json
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\bin\Debug\netcoreapp2.2\01_Fiap.Exercicio01.runtimeconfig.json
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\bin\Debug\netcoreapp2.2\01_Fiap.Exercicio01.runtimeconfig.dev.json
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\bin\Debug\netcoreapp2.2\01_Fiap.Exercicio01.dll
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\bin\Debug\netcoreapp2.2\01_Fiap.Exercicio01.pdb
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\obj\Debug\netcoreapp2.2\01_Fiap.Exercicio01.csprojAssemblyReference.cache
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\obj\Debug\netcoreapp2.2\01_Fiap.Exercicio01.csproj.CoreCompileInputs.cache
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\obj\Debug\netcoreapp2.2\01_Fiap.Exercicio01.AssemblyInfoInputs.cache
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\obj\Debug\netcoreapp2.2\01_Fiap.Exercicio01.AssemblyInfo.cs
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\obj\Debug\netcoreapp2.2\01_Fiap.Exercicio01.dll
+E:\ws_cs\01_Fiap.Exercicio01\01_Fiap.Exercicio01\obj\Debug\netcoreapp2.2\01_Fiap.Exercicio01.pdb
