@@ -1,0 +1,27 @@
+﻿
+@model  List<_03_Fiap.Web.AspNet.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Listar";
+}
+
+<h1>Lista de Usuários</h1>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Data Nascimento</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.Nome</td>
+            <td>@u.DataNascimento</td>
+            <td>@u.Email</td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/usuario/cadastrar"><input type="button" class="btn btn-success" value="Voltar"></a>
+
