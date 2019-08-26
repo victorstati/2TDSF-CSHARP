@@ -1,0 +1,35 @@
+﻿@model  IList<Serie>
+@{
+    ViewData["Title"] = "Listar";
+}
+
+<h1>Lista de Séries</h1>
+<hr />
+
+@if (TempData["msg"] != null)
+{
+<div class="alert alert-success">
+    @TempData["msg"]
+</div>
+}
+
+<mensagem texto="@TempData["msg"]"></mensagem>
+
+<table class="table>
+    <tr>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Data de Lançamento</th>
+        <th>Temporadas</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+<tr>
+    <td>@item.Nome</td>
+    <td>@item.Tipo</td>
+    <td>@item.DataLancamento.ToShortDateString()</td>
+    <td>@item.Temporadas</td>
+</tr>
+    }
+</table>
+

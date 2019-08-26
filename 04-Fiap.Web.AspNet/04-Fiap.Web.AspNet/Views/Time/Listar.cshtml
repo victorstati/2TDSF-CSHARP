@@ -1,0 +1,38 @@
+﻿@model  List<Time>
+    
+    @{
+        ViewData["Title"] = "Listar";
+    }
+
+@if (TempData["msg"] != null) {
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
+    <h1>Lista de Times</h1>
+    <hr />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de Fundação</th>
+                <th>Folha de Pagamento</th>
+                <th>Classificado</th>
+                <th>Vitórias</th>
+            </tr>
+            @foreach (var time in Model)
+            {
+                <tr>
+                    <td>@time.Nome</td>
+                    <td>@time.DataFundacao</td>
+                    <td>@time.FolhaPagamento</td>
+                    <td>@(time.Classificado?"Sim":"Não")</td>
+                    <td>@time.Vitorias</td>
+                </tr>
+            }
+        </thead>
+    </table>
+<br />
+<a asp-controller="Time" asp-action="Cadastrar" class="btn btn-primary">Voltar</a>
+
