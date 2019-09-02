@@ -22,6 +22,8 @@
         <th>Tipo</th>
         <th>Data de Lançamento</th>
         <th>Temporadas</th>
+        <th>Editar</th>
+        <th>Remover</th>
     </tr>
     @foreach(var item in Model)
     {
@@ -30,6 +32,8 @@
     <td>@item.Tipo</td>
     <td>@item.DataLancamento.ToShortDateString()</td>
     <td>@item.Temporadas</td>
+    <td><a asp-action="editar" asp-route-id="@item.SerieId">Editar</a></td>
+    <td><a asp-action="remover">Remover</a></td>
 </tr>
     }
 </table>

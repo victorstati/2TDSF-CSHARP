@@ -12,7 +12,7 @@ namespace _05_Fiap.Web.AspNet.Persistences
         public DbSet<Serie> Series { get; set; }
 
         //construtor ctor tab tab
-        public BancoContext(DbContextOptions o) : base(o);
+        public BancoContext(DbContextOptions o) : base(o)
         {
 
         }
