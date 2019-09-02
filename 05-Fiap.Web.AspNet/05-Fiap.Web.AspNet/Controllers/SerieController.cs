@@ -21,6 +21,7 @@ namespace _05_Fiap.Web.AspNet.Controllers
   
         public IActionResult Listar()
         {
+            TempData["msg"] = "Série Cadastrada!";
             return View(_lista);
         }
 
@@ -28,8 +29,9 @@ namespace _05_Fiap.Web.AspNet.Controllers
         public IActionResult Cadastrar(Serie serie)
         {
             _lista.Add(serie);
-            TempData["msg"] = "Série Cadastrada!";
+            //TempData["msg"] = "Série Cadastrada!";
             return RedirectToAction("Listar");
+            
         }
 
         
