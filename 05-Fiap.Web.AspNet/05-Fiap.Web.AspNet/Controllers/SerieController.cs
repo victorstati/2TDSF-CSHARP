@@ -61,18 +61,22 @@ namespace _05_Fiap.Web.AspNet.Controllers
             _context.SaveChanges();
             return RedirectToAction("Listar");
         }
-        
-        public IActionResult Remover(Serie serie)
+
+        [HttpPost]
+        public IActionResult Excluir(int id)
         {
-            _context.Series.Remove(serie);
-            _context.SaveChanges();
+            var serie = _context.Series.Find(id); //Pesquisa
+            _context.Series.Remove(serie); //Remove
+            _context.SaveChanges(); //Commit
+            TempData["msg"] = "Excluido!"; //Mensagem
             return RedirectToAction("Listar");
         }
+
 
         /*Entity Framework:
          * criar calsse que herda de dbContext
          * configurar o banco de dados appsettings.json
          * configurar a injeção de dependência na startup.cs
-        */ 
+        */
     }
 }

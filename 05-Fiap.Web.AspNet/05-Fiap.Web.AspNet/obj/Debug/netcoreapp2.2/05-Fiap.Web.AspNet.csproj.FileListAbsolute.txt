@@ -31,3 +31,4 @@ E:\ws_cs\05-Fiap.Web.AspNet\05-Fiap.Web.AspNet\obj\Debug\netcoreapp2.2\05-Fiap.W
 E:\ws_cs\05-Fiap.Web.AspNet\05-Fiap.Web.AspNet\obj\Debug\netcoreapp2.2\Razor\Views\Serie\Cadastrar.g.cshtml.cs
 E:\ws_cs\05-Fiap.Web.AspNet\05-Fiap.Web.AspNet\obj\Debug\netcoreapp2.2\Razor\Views\Serie\Listar.g.cshtml.cs
 E:\ws_cs\05-Fiap.Web.AspNet\05-Fiap.Web.AspNet\obj\Debug\netcoreapp2.2\Razor\Views\Serie\Editar.g.cshtml.cs
+E:\ws_cs\05-Fiap.Web.AspNet\05-Fiap.Web.AspNet\obj\Debug\netcoreapp2.2\Razor\Views\Serie\_formulario.g.cshtml.cs
