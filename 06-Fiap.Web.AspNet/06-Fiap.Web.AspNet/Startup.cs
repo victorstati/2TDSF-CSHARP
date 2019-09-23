@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using _06_Fiap.Web.AspNet.Persistences;
+using _06_Fiap.Web.AspNet.Persitences;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,12 +25,8 @@ namespace _06_Fiap.Web.AspNet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //configurar a injeção de dependencia do banco de dados
-            services.AddDbContext<BancoContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("conexao")));
-
-
+            services.AddDbContext<BancoContext>(
+                o => o.UseSqlServer(Configuration.GetConnectionString("conexao")));
 
             services.Configure<CookiePolicyOptions>(options =>
             {

@@ -1,27 +1,65 @@
-﻿using _06_Fiap.Web.AspNet.Models;
-using _06_Fiap.Web.AspNet.Persistences;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _06_Fiap.Web.AspNet.Models;
+using _06_Fiap.Web.AspNet.Persitences;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace _06_Fiap.Web.AspNet.Controllers
 {
     public class CondominioController : Controller
     {
-        //injeção do banco
-        private BancoContext _context { get; set; }
-
+        private BancoContext _context;
         public CondominioController(BancoContext context)
         {
             _context = context;
         }
 
-        //CRUD
+        [HttpGet]
+        public IActionResult Pesquisar(string termoPesquisa)
+        {
+            var lista = _context.Condominios.Where(
+                c => c.Nome.Contains(termoPesquisa)).
+                Include(c => c.Sindico).ToList();
+            return View("Listar", lista);
+        }
 
-        //Cadastrar
+        [HttpPost]
+        public IActionResult Excluir(int id)
+        {
+            var cond = _context.Condominios.Find(id);
+            _context.Condominios.Remove(cond);
+            _context.SaveChanges();
+            TempData["mensagem"] = "Excluido";
+            return RedirectToAction("Listar");
+        }
+
+        [HttpGet]
+        public IActionResult Editar(int id)
+        {
+            var cond = _context.Condominios.Include(c => c.Sindico)
+                .Where(c => c.CondominioId == id).FirstOrDefault();
+            return View(cond);
+        }
+
+        [HttpPost]
+        public IActionResult Editar(Condominio condominio)
+        {
+            _context.Condominios.Update(condominio);
+            _context.SaveChanges();
+            TempData["mensagem"] = "Editado com sucesso!";
+            return RedirectToAction("Listar");
+        }
+
+        [HttpGet]
+        public IActionResult Listar()
+        {
+            //include -> inclui o relacionamento na pesquisa
+            return View(_context.Condominios.Include(c => c.Sindico).ToList());
+        }
+
         [HttpGet]
         public IActionResult Cadastrar()
         {
@@ -33,44 +71,9 @@ namespace _06_Fiap.Web.AspNet.Controllers
         {
             _context.Condominios.Add(condominio);
             _context.SaveChanges();
-            return RedirectToAction("Listar");
+            TempData["mensagem"] = "Cadastrado!";
+            return RedirectToAction("Cadastrar");
         }
 
-        //Listar
-        [HttpGet]
-        public IActionResult Listar()
-        {
-            TempData["msg"] = "Cadastrado com Sucesso!";
-            var lista = _context.Condominios.ToList();
-            return  View(lista);
-        }
-
-        //Editar
-        [HttpGet]
-        public IActionResult Editar(int id)
-        {
-            var condominio = _context.Condominios.Find(id);
-            return View(condominio);
-        }
-
-        [HttpPost]
-        public IActionResult Editar(Condominio condominio)
-        {
-            _context.Attach(condominio).State = EntityState.Modified;
-            _context.SaveChanges();
-            return RedirectToAction("Listar");
-        }
-
-        //Remover
-        [HttpPost]
-        public IActionResult Remover(int id)
-        {
-            var condominio = _context.Condominios.Find(id);
-            _context.Condominios.Remove(condominio);
-            _context.SaveChanges();
-
-            TempData["msg"] = "Removido com Sucesso!";
-            return RedirectToAction("Listar");
-        }
     }
 }

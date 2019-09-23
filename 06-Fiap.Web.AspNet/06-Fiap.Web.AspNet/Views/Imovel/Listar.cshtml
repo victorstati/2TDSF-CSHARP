@@ -1,0 +1,32 @@
+﻿@model List<Imovel>
+
+@{
+    ViewData["Title"] = "Listar";
+}
+
+<h1>Lista de Imóveis</h1>
+
+
+<form asp-action="listar" method="get" class="form-inline"> 
+    <select asp-items="@ViewBag.condominios" class="form-control" name="IdBusca">
+        <option value="0">Selecione</option>
+    </select>
+    <input type="submit" value="Buscar" class="ml-2 btn btn-success" />
+</form>
+
+<table class="table">
+    <tr>
+        <th>Número</th>
+        <th>Área Útil</th>
+        <th>Condomínio</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Numero</td>
+            <td>@item.AreaUtil</td>
+            <td>@item.Condominio.Nome</td>
+        </tr>
+    }
+</table>
+

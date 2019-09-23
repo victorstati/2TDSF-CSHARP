@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace _06_Fiap.Web.AspNet.TagHelpers
+namespace _06_Exercicio.TagHelpers
 {
-    public class BotaoTagHelper : TagHelper
+    public class BotaoTagHelper:TagHelper
     {
         public string Texto { get; set; }
 
