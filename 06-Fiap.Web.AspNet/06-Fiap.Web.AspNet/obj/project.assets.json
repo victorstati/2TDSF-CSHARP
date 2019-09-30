@@ -12939,11 +12939,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ws_cs\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet.csproj",
+      "projectUniqueName": "F:\\ws_cs\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet.csproj",
       "projectName": "06-Fiap.Web.AspNet",
-      "projectPath": "E:\\ws_cs\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet.csproj",
+      "projectPath": "F:\\ws_cs\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet.csproj",
       "packagesPath": "C:\\Users\\logonrmlocal\\.nuget\\packages\\",
-      "outputPath": "E:\\ws_cs\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet\\obj\\",
+      "outputPath": "F:\\ws_cs\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

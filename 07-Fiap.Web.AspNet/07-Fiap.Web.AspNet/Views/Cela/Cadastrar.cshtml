@@ -1,0 +1,25 @@
+﻿@model  Cela
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<h1>Cadastrar Cela</h1>
+
+<form asp-action="cadastrar">
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Area"></label>
+        <input asp-for="Area" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="QuantidadeMaxima"></label>
+        <input asp-for="QuantidadeMaxima" class="form-control" />
+    </div>
+
+    <input type="submit" value="Cadastrar" class="btn btn-primary"/>
+</form>

@@ -1,0 +1,62 @@
+﻿@model  IList<Cela>
+
+@{
+    ViewData["Title"] = "Listar";
+}
+
+<h2>Listar Celas</h2>
+
+<a asp-action="Cadastrar" asp-controller="Cela">Cadastrar</a>
+<br />
+<message mensagem="@TempData["msg"]"></message>
+
+<form asp-action="pesquisar" method="get" class="form-inline">
+    <input placeholder="Digite o nome" type="text" name="termoPesquisa" class="form-control" />
+    <input type="submit" value="Buscar" class="ml-2 btn btn-success" />
+</form>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Área</th>
+        <th>Quantidade Máxima</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Area</td>
+            <td>@item.QuantidadeMaxima</td>
+            <td>
+                <a asp-action="detalhar" asp-route-id="@item.CelaId">Detalhes</a>
+                <button onclick="codigo.value = @item.CelaId" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#modalExemplo">
+                    Remover
+                </button>
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Deseja realmente excluir?
+            </div>
+            <div class="modal-footer">
+                <form asp-action="excluir">
+                    <input type="hidden" name="id" id="codigo" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                    <button type="submit" class="btn btn-danger">Sim</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
